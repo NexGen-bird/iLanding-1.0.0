@@ -34,6 +34,53 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    /* Toggle switch styling */
+    .form-switch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .toggle-label {
+      margin: 0 10px;
+    }
+    
+    .toggle-slider {
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    
+    .toggle-slider::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      transition: transform 0.3s;
+    }
+    /* Hide the checkbox */
+    input[type="checkbox"] {
+      display: none;
+    }
+    
+    input[type="checkbox"]:checked + .toggle-slider {
+      background-color: #007bff;
+    }
+    
+    input[type="checkbox"]:checked + .toggle-slider::before {
+      transform: translateX(20px);
+    }
+    </style>
 </head>
 
 <body class="index-page">
@@ -41,7 +88,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index1.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/nexgenbird.png" alt="">
         <h1 class="sitename">NexGen Study Center</h1>
@@ -854,45 +901,38 @@
         <h2>Our Plans</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
-
+    
+      <!-- Toggle Button -->
+      <div class="container text-center mb-4">
+        <label class="form-switch">
+          <span class="toggle-label">Monthly</span>
+          <input type="checkbox" id="priceToggle">
+          <span class="toggle-slider"></span>
+          <span class="toggle-label">Yearly</span>
+        </label>
+      </div>
+    
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+    
         <div class="row g-4 justify-content-center">
-
+    
           <!-- Basic Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-card">
               <h3>Single Shift Plan</h3>
               <div class="price">
                 <span class="currency">₹</span>
-                <span class="amount">1250</span>
+                <span class="amount" data-monthly="1250" data-yearly="13500">1250</span>
                 <span class="period">/ month</span>
               </div>
               <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.</p>
-
-              <h4>Featured Included:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Duis aute irure dolor
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Excepteur sint occaecat
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Nemo enim ipsam voluptatem
-                </li>
-              </ul>
-
               <a href="#" class="btn btn-primary">
-                Buy Now
+                Book Now
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
           </div>
-
+    
           <!-- Standard Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="pricing-card popular">
@@ -900,85 +940,39 @@
               <h3>Double Shift Plan</h3>
               <div class="price">
                 <span class="currency">₹</span>
-                <span class="amount">2200</span>
+                <span class="amount" data-monthly="2200" data-yearly="24000">2200</span>
                 <span class="period">/ month</span>
               </div>
               <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
-
-              <h4>Featured Included:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Lorem ipsum dolor sit amet
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Consectetur adipiscing elit
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Sed do eiusmod tempor
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Ut labore et dolore magna
-                </li>
-              </ul>
-
               <a href="#" class="btn btn-light">
-                Buy Now
+                Book Now
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
           </div>
-
+    
           <!-- Premium Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="pricing-card">
               <h3>Full Day Plan</h3>
               <div class="price">
                 <span class="currency">₹</span>
-                <span class="amount">2850</span>
+                <span class="amount" data-monthly="2850" data-yearly="31500">2850</span>
                 <span class="period">/ month</span>
               </div>
               <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
-
-              <h4>Featured Included:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Temporibus autem quibusdam
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Saepe eveniet ut et voluptates
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Nam libero tempore soluta
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Cumque nihil impedit quo
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Maxime placeat facere possimus
-                </li>
-              </ul>
-
               <a href="#" class="btn btn-primary">
-                Buy Now
+                Book Now
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
           </div>
-          
+    
         </div>
-
+    
       </div>
-
-    </section><!-- /Pricing Section -->
+    
+    </section>
 
     <!-- Faq Section -->
     <section class="faq-9 faq section light-background" id="faq">
@@ -1180,6 +1174,23 @@
         button.setAttribute('aria-current', index === 0 ? 'true' : '');
         button.setAttribute('aria-label', `Slide ${index + 1}`);
         indicatorsContainer.appendChild(button);
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const priceToggle = document.getElementById("priceToggle");
+      const amounts = document.querySelectorAll(".amount");
+  
+      priceToggle.addEventListener("change", function () {
+        const isYearly = priceToggle.checked;
+        amounts.forEach(amount => {
+          const monthlyPrice = amount.getAttribute("data-monthly");
+          const yearlyPrice = amount.getAttribute("data-yearly");
+          amount.textContent = isYearly ? yearlyPrice : monthlyPrice;
+          const period = amount.nextElementSibling;
+          period.textContent = isYearly ? "/ year" : "/ month";
+        });
       });
     });
   </script>
